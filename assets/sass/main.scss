@@ -133,3 +133,14 @@ footer {
 @import 'fonts/font_roboto';
 @import 'base64';
 @import 'import/print';
+
+
+@media (min-width: 768px) {
+
+  .subrow-right-30{
+    padding-right: 33%;
+  }
+  .subrow-left-30{
+    padding-left: 33%;
+  }
+}
