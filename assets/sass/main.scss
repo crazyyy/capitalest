@@ -90,8 +90,6 @@ header {
   background-color: $light-gray;
   .logo {
     display: block;
-
-
     img {
       max-width: 100%;
     }
@@ -135,12 +133,74 @@ footer {
 @import 'import/print';
 
 
-@media (min-width: 768px) {
 
-  .subrow-right-30{
+//      HEADER
+header {
+  padding-bottom: 5px;
+  .container {
+    position: relative;
+
+    background-image: url('../img/header.png');
+    background-size: 100%;
+    &:after {
+      //header order bottom
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      left: 0;
+
+      display: block;
+
+      height: 5px;
+
+      content: '';
+
+      background-image: url('../img/header-border.png');
+      background-size: 100%;
+    }
+    .head-logo-tel {
+      margin-top: 55px;
+      margin-left: 50px;
+    }
+    a.tel {
+      font-size: 35px;
+    }
+    a.mail {
+      font-size: 15px;
+    }
+    a {
+      button {
+        font-size: 10px;
+
+        padding: 1px;
+      }
+    }
+    .title-container {
+      margin-top: 5%;
+      margin-right: 15%;
+      margin-left: 23%;
+
+      border: 1px;
+      border-color: #000;
+      border-radius: 3px;
+      background-color: rgba(255,255,255, .5);
+      h5 {
+        font-size: 30px;
+      }
+      h6 {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+
+//        PAGE2
+@media (min-width: 768px) {
+  .subrow-right-30 {
     padding-right: 33%;
   }
-  .subrow-left-30{
+  .subrow-left-30 {
     padding-left: 33%;
   }
 }
