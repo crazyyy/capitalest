@@ -328,6 +328,28 @@ header {
   background-size: 30%, auto;
 }
 
+
+//           LIST DEKOR
+
+li.list-dekor {
+  &:before {
+    position: absolute;
+    top: 10px;
+    left: -15px;
+
+    display: block;
+
+    width: 7px;
+    height: 2px;
+
+    content: '';
+
+    background-color: #000;
+  }
+}
+
+
+
 //          MEDIA
 @media (min-width: 768px) {
   .subrow-right-30 {
