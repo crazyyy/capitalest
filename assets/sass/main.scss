@@ -289,15 +289,16 @@ header {
       }
     }
   }
-}
-@media (min-width: 768px) {
-  .subrow-right-30 {
-    padding-right: 40%;
+  @media (min-width: 768px) {
+    .subrow-right-30 {
+      padding-right: 40%;
+    }
+    .subrow-left-30 {
+      padding-left: 45%;
+    }
   }
-  .subrow-left-30 {
-    padding-left: 45%;
-  }
 }
+
 
 //        PAGE2
 .block-page-2 {
@@ -336,7 +337,7 @@ header {
 
 //        PAGE3
 .block-page-3 {
-  background-image: url('../img/page2.png');
+  background-image: url('../img/page3.png');
   background-size: 100%;
   .container {
     .tittle-page-3 {
@@ -360,9 +361,17 @@ header {
     }
     .row {
       ul {
-        width: 45%;
+        width: 60%;
         margin: 10px;
       }
+    }
+  }
+  @media (min-width: 768px) {
+    .subrow-right-30 {
+      padding-right: 40%;
+    }
+    .subrow-left-30 {
+      padding-left: 45%;
     }
   }
 }
