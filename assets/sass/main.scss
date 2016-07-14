@@ -133,6 +133,11 @@ footer {
 @import 'import/print';
 
 
+//        VARIABLES
+
+
+$liteGreen: #91cd55;
+
 
 //      HEADER
 header {
@@ -182,7 +187,7 @@ header {
 
             color: #fff;
             border-radius: 0;
-            background-color: #91cd55;
+            background-color: $liteGreen;
           }
         }
       }
@@ -228,9 +233,6 @@ header {
         border-radius: 55px;
         //background-color: rgba(0,0,0,.5);
         //box-shadow: 0 7px 8px 1px rgba(0,0,0,.5);
-        &:hover {
-          background-color: rgba(0,0,0,.5);
-        }
       }
       span {
         font-size: 10px;
@@ -242,12 +244,29 @@ header {
 
         color: #000;
       }
+      &:hover {
+        img {
+          background-color: rgba(0,0,0,.5);
+        }
+      }
     }
   }
 }
 
 
-//        PAGE2
+//        ABOUT
+.block-second {
+  .container {
+    background-image: url('../img/header.png');
+    background-size: 100%;
+    font {
+      color: $liteGreen;
+    }
+  }
+}
+
+//        PAGE1
+
 @media (min-width: 768px) {
   .subrow-right-30 {
     padding-right: 33%;
