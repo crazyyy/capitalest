@@ -154,6 +154,10 @@ button {
   }
 }
 
+h6 {
+  color: $textBlue;
+}
+
 //      HEADER
 header {
   padding-bottom: 5px;
@@ -269,7 +273,7 @@ header {
 
 
 //        ABOUT
-.block-second {
+.block-about {
   .container {
     background-color: #fff;
     font {
@@ -375,3 +379,41 @@ header {
     }
   }
 }
+
+
+//        HOW-WORK
+.block-how-work {
+  .container {
+    .row {
+      ul.list-how-work {
+        display: inline;
+
+        margin-top: 30px;
+        margin-bottom: 20px;
+        margin-left: 11%;
+        li {
+          width: 120px;
+          height: 100px;
+
+          text-align: center;
+          img {
+            height: 60%;
+          }
+          span {
+            font-size: 10px;
+
+            display: block;
+
+            width: 100%;
+            height: 30px;
+
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//===============FUTTER
