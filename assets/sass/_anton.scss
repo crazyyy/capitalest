@@ -10,6 +10,8 @@
     padding: 0;
     .text-slogan {
       padding-top: 180px;
+      padding-right:0;
+      padding-left:0;
       h1 {
         font-size: 80px;
         font-weight: bold;
@@ -48,7 +50,7 @@
 
         background-color: #fbfbfb;
         .client {
-          padding: 35px 180px;
+          padding: 35px 160px;
           padding-top: 20;
 
           text-align: center;
