@@ -24,7 +24,7 @@ $textBlue: #0b8dd7;
 }
 
 
-.dohuja_zagolovkiv {
+.tittle-blue-text {
   color: $textBlue;
 }
 
@@ -35,9 +35,10 @@ header {
   padding-bottom: 5px;
 
   background-image: url('../img/header.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   &:after {
-    //header order bottom
+    //header border bottom
     position: absolute;
     right: 0;
     bottom: -5px;
@@ -95,17 +96,17 @@ header {
       padding: 10px;
 
       text-align: center;
+      //border: 1px solid orange;
 
-      border: 1px solid orange;
       border-radius: 5px;
       background-color: rgba(255,255,255, .5);
       box-shadow: 0 2px 35px 0 rgba(0,0,0,.5);
-      h5 {
+      h3 {
         font-size: 28px;
 
         margin: 0;
       }
-      h6 {
+      h4 {
         font-size: 23px;
 
         margin: 0;
@@ -165,7 +166,8 @@ header {
 //        PAGE1
 .block-page-1 {
   background-image: url('../img/page1.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   .container {
     .tittle-page-1 {
       h3 {
@@ -179,7 +181,8 @@ header {
 //        PAGE2
 .block-page-2 {
   background-image: url('../img/page2.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   .container {
     .tittle-page-2 {
       h3 {
@@ -214,7 +217,8 @@ header {
 //        PAGE3
 .block-page-3 {
   background-image: url('../img/page3.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   .container {
     .tittle-page-3 {
       h3 {
@@ -278,8 +282,53 @@ header {
   }
 }
 
+//        HOW-WORK
+.block-how-work {
+  .flex-containe-work {
+    display: -webkit-flex;
+    display:    -moz-flex;
+    display:     -ms-flex;
+    display:      -o-flex;
+    display:         flex;
+    flex-direction: row;
 
-//===============FUTTER
+    flex-wrap: wrap;
+  }
+}
+
+//           PAGE ICON
+.page1-icon1 {
+  background-image: url('../img/page1-icon1.png');
+  background-repeat: no-repeat;
+  background-position: 90% 35%;
+  background-size: 30%, auto;
+}
+.page1-icon2 {
+  background-image: url('../img/page1-icon2.png');
+  background-repeat: no-repeat;
+  background-position: 10% 35%;
+  background-size: 30%, auto;
+}
+.page2-icon {
+  background-image: url('../img/page2-icon.png');
+  background-repeat: no-repeat;
+  background-position: 90% 35%;
+  background-size: 30%, auto;
+}
+.page3-icon1 {
+  background-image: url('../img/page3-icon1.png');
+  background-repeat: no-repeat;
+  background-position: 10% 35%;
+  background-size: 30%, auto;
+}
+.page3-icon2 {
+  background-image: url('../img/page3-icon2.png');
+  background-repeat: no-repeat;
+  background-position: 90% 35%;
+  background-size: 30%, auto;
+}
+
+//          MEDIA
 @media (min-width: 768px) {
   .subrow-right-30 {
     padding-right: 40%;
@@ -296,3 +345,15 @@ header {
     padding-left: 45%;
   }
 }
+
+@media (max-width: 768px) {
+  .page1-icon1,
+  .page1-icon2,
+  .page2-icon,
+  .page3-icon1,
+  .page3-icon2 {
+    background-image: none;
+  }
+}
+
+//===============FOOTER
