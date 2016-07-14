@@ -341,19 +341,18 @@ header {
   .container {
     .tittle-page-3 {
       h3 {
-        font-size: 25px;
-
-        margin: 0;
-      }
-      h4 {
         font-size: 35px;
 
         margin: 0;
       }
-      h5 {
-        font-size: 50px;
+      h4 {
+        font-size: 25px;
+
+        margin: 0;
       }
-      h6 {
+      h5 {
+        font-size: 25px;
+
         margin: 0;
 
         color: $textBlue;
