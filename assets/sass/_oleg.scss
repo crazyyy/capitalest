@@ -1,15 +1,12 @@
-
-//        VARIABLES
-
+// VARIABLES
 
 $liteGreen: #91cd55;
 $textBlue: #0b8dd7;
 
-//          BUTTON  TEXT
+// BUTTON TEXT
 
 .btn {
   font-size: 18px;
-  //padding: 4px 8px 4px 8px;
 
   border-radius: 0;
 }
@@ -40,7 +37,7 @@ $textBlue: #0b8dd7;
   color: $liteGreen;
 }
 
-//      HEADER
+// HEADER
 header {
   position: relative;
 
@@ -49,7 +46,7 @@ header {
   background-image: url('../img/header.png');
   background-repeat: no-repeat;
   background-size: cover;
-  //          header border bottom
+  // header border bottom
   &:after {
     position: absolute;
     right: 0;
@@ -67,17 +64,13 @@ header {
   }
   .container {
     .head-logo-tel {
-      //margin-bottom: 33px;
       padding-top: 50px;
       padding-bottom: 50px;
       .logo {
         width: 150px;
         margin-left: 77px;
-        //padding-top: 50px;
-        //background-color: red;
       }
       .tel-content {
-        //padding-top: 50px;
         text-align: right;
         a.tel {
           font-size: 35px;
@@ -138,7 +131,7 @@ header {
     margin: 0 auto 80px;
 
     @extend .clearfix;
-    li.header-nav-button {
+    li {
       display: inline-block;
       float: left;
 
@@ -171,19 +164,16 @@ header {
 }
 
 
-//        ABOUT
+// ABOUT
 .block-about {
   .container {
     padding-top: 100px;
 
     background-color: #fff;
-    /*     font {
-  color: $liteGreen;
-} */
   }
 }
 
-//        PAGE1
+// PAGE1
 .block-page-1 {
   background-image: url('../img/page1.png');
   background-repeat: no-repeat;
@@ -194,6 +184,7 @@ header {
       vertical-align: middle;
       h3 {
         font-size: 50px;
+        font-weight: bold;
         line-height: .9;
 
         margin: 0;
@@ -218,8 +209,7 @@ header {
   }
 }
 
-
-//        PAGE2
+// PAGE2
 .block-page-2 {
   background-image: url('../img/page2.png');
   background-repeat: no-repeat;
@@ -228,7 +218,6 @@ header {
     padding-top: 50px;
     .tittle-page-2 {
       padding-bottom: 50px;
-      //text-align: center;
       h3 {
         font-size: 25px;
 
@@ -268,7 +257,7 @@ header {
 }
 
 
-//        PAGE3
+// PAGE3
 .block-page-3 {
   background-image: url('../img/page3.png');
   background-repeat: no-repeat;
@@ -300,10 +289,7 @@ header {
   }
 }
 
-
-
-
-//           PAGE ICON
+// PAGE ICON
 .page1-icon1 {
   background-image: url('../img/page1-icon1.png');
   background-repeat: no-repeat;
@@ -317,10 +303,31 @@ header {
   background-size: 30%, auto;
 }
 .page2-icon {
+  position: relative;
+
   background-image: url('../img/page2-icon.png');
   background-repeat: no-repeat;
   background-position: 90% 35%;
   background-size: 30%, auto;
+  &:before {
+    font-size: 20px;
+    font-weight: bold;
+
+    position: absolute;
+    top: -20px;
+    left: 20px;
+
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    content: '3';
+    text-align: center;
+
+    color: red;
+    border: 3px dotted green;
+  }
 }
 .page3-icon1 {
   background-image: url('../img/page3-icon1.png');
@@ -335,8 +342,7 @@ header {
   background-size: 30%, auto;
 }
 
-
-//           LIST DEKOR
+// LIST DEKOR
 
 li.list-dekor {
   padding-bottom: 20px;
@@ -357,9 +363,7 @@ li.list-dekor {
   }
 }
 
-
-
-//          MEDIA
+// MEDIA
 @media (min-width: 768px) {
   .subrow-right-30 {
     padding-right: 40%;
@@ -386,38 +390,3 @@ li.list-dekor {
     background-image: none;
   }
 }
-
-
-
-//        HOW-WORK
-/* .block-how-work {
-  .container {
-    .row {
-      span {
-        font-size: 10px;
-
-        display: block;
-
-        width: 100%;
-        height: 30px;
-
-        color: #000;
-      }
-    }
-  }
-  .block-how-work {
-    .flex-containe-work {
-      display: -webkit-flex;
-      display:    -moz-flex;
-      display:     -ms-flex;
-      display:      -o-flex;
-      display:         flex;
-      flex-direction: row;
-
-      flex-wrap: wrap;
-    }
-  }
-}
- */
-
-//===============FOOTER
