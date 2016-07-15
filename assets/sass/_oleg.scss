@@ -5,7 +5,7 @@
 $liteGreen: #91cd55;
 $textBlue: #0b8dd7;
 
-//          BUTTON
+//          BUTTON  TEXT
 
 .btn {
   font-size: 15px;
@@ -17,15 +17,21 @@ $textBlue: #0b8dd7;
 
 .btn-green {
   color: #fff;
+  color: #fff;
   background-color: $liteGreen;
-  a {
-    color: #fff;
-  }
+}
+
+.subtittle {
+  font-size: 22px;
 }
 
 
 .tittle-blue-text {
   color: $textBlue;
+}
+
+.greenText {
+  color: $liteGreen;
 }
 
 //      HEADER
@@ -37,16 +43,16 @@ header {
   background-image: url('../img/header.png');
   background-repeat: no-repeat;
   background-size: cover;
+  //          header border bottom
   &:after {
-    //header border bottom
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: -6px;
     left: 0;
 
     display: block;
 
-    height: 5px;
+    height: 6px;
 
     content: '';
 
@@ -55,48 +61,54 @@ header {
   }
   .container {
     .head-logo-tel {
-      margin-bottom: 33px;
+      //margin-bottom: 33px;
+      padding-top: 50px;
+      padding-bottom: 50px;
       .logo {
+        width: 150px;
         margin-left: 77px;
-        padding-top: 33px;
-
-        background-color: red;
+        //padding-top: 50px;
+        //background-color: red;
       }
       .tel-content {
-        padding-top: 33px;
-
+        //padding-top: 50px;
         text-align: right;
         a.tel {
           font-size: 35px;
+
+          margin: 0;
+          padding: 0;
 
           color: #000;
         }
         a.mail {
           font-size: 15px;
 
+          margin: 0;
+          padding: 0;
+
           text-decoration: underline;
         }
-        a {
-          button {
-            font-size: 10px;
+        button {
+          font-size: 10px;
 
-            padding: 4px 8px 4px 8px;
+          margin: 0;
+          padding: 4px 8px 4px 8px;
 
-            color: #fff;
-            border-radius: 0;
-            background-color: $liteGreen;
-          }
+          color: #fff;
+          border-radius: 0;
+          background-color: $liteGreen;
         }
       }
     }
     .title-container {
-      width: 80%;
+      width: 60%;
       margin-right: auto;
+      margin-bottom: 50px;
       margin-left: auto;
       padding: 10px;
 
-      text-align: center;
-      //border: 1px solid orange;
+      text-align-last: justify;
 
       border-radius: 5px;
       background-color: rgba(255,255,255, .5);
@@ -117,7 +129,7 @@ header {
     display: block;
 
     width: 80%;
-    margin: 0 auto 20px;
+    margin: 0 auto 80px;
 
     @extend .clearfix;
     li.header-nav-button {
@@ -156,10 +168,12 @@ header {
 //        ABOUT
 .block-about {
   .container {
+    padding-top: 100px;
+
     background-color: #fff;
-    font {
-      color: $liteGreen;
-    }
+    /*     font {
+  color: $liteGreen;
+} */
   }
 }
 
@@ -169,9 +183,30 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   .container {
+    padding-top: 50px;
     .tittle-page-1 {
+      vertical-align: middle;
       h3 {
-        font-size: 30px;
+        font-size: 50px;
+        line-height: .9;
+
+        margin: 0;
+
+        text-align-last: justify;
+      }
+      h4 {
+        font-size: 39px;
+        line-height: .9;
+
+        margin: 0;
+
+        text-align-last: justify;
+      }
+      h6 {
+        font-size: 26px;
+        line-height: 1.05;
+
+        margin: 0;
       }
     }
   }
@@ -185,6 +220,8 @@ header {
   background-size: cover;
   .container {
     .tittle-page-2 {
+      //text-align: center;
+      text-align-last: justify
       h3 {
         font-size: 25px;
 
@@ -200,8 +237,6 @@ header {
       }
       h6 {
         margin: 0;
-
-        color: $textBlue;
       }
     }
     .row {
@@ -231,12 +266,10 @@ header {
 
         margin: 0;
       }
-      h5 {
+      h6 {
         font-size: 25px;
 
         margin: 0;
-
-        color: $textBlue;
       }
     }
     .row {
@@ -249,52 +282,7 @@ header {
 }
 
 
-//        HOW-WORK
-.block-how-work {
-  .container {
-    .row {
-      ul.list-how-work {
-        display: inline;
 
-        margin-bottom: 20px;
-        margin-left: 11%;
-        li {
-          width: 120px;
-          height: 100px;
-
-          text-align: center;
-          img {
-            height: 60%;
-          }
-          span {
-            font-size: 10px;
-
-            display: block;
-
-            width: 100%;
-            height: 30px;
-
-            color: #000;
-          }
-        }
-      }
-    }
-  }
-}
-
-//        HOW-WORK
-.block-how-work {
-  .flex-containe-work {
-    display: -webkit-flex;
-    display:    -moz-flex;
-    display:     -ms-flex;
-    display:      -o-flex;
-    display:         flex;
-    flex-direction: row;
-
-    flex-wrap: wrap;
-  }
-}
 
 //           PAGE ICON
 .page1-icon1 {
@@ -377,5 +365,38 @@ li.list-dekor {
     background-image: none;
   }
 }
+
+
+
+//        HOW-WORK
+.block-how-work {
+  .container {
+    .row {
+      span {
+        font-size: 10px;
+
+        display: block;
+
+        width: 100%;
+        height: 30px;
+
+        color: #000;
+      }
+    }
+  }
+  .block-how-work {
+    .flex-containe-work {
+      display: -webkit-flex;
+      display:    -moz-flex;
+      display:     -ms-flex;
+      display:      -o-flex;
+      display:         flex;
+      flex-direction: row;
+
+      flex-wrap: wrap;
+    }
+  }
+}
+
 
 //===============FOOTER
