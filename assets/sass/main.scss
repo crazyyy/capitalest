@@ -90,8 +90,6 @@ header {
   background-color: $light-gray;
   .logo {
     display: block;
-
-
     img {
       max-width: 100%;
     }
@@ -121,8 +119,6 @@ article {
 footer {
   height: $footer;
   margin: $footer_margin auto 0;
-
-  background-color: $light-gray;
   .inner {
     height: $footer;
   }
