@@ -48,3 +48,15 @@ $rb-font-path:        "../fonts" !default;
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'PFDinTextPro';
+    src: url('#{$rb-font-path}/pfdintextpro-xblack.eot');
+    src: url('#{$rb-font-path}/pfdintextpro-xblack.eot?#iefix') format('embedded-opentype'),
+         url('#{$rb-font-path}/pfdintextpro-xblack.woff') format('woff'),
+         url('#{$rb-font-path}/pfdintextpro-xblack.ttf') format('truetype'),
+         url('#{$rb-font-path}/pfdintextpro-xblack.svg#pf_dintext_proextra_black') format('svg');
+    font-weight:800;
+    font-style: normal;
+
+}
