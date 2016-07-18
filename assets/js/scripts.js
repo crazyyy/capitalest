@@ -31,6 +31,7 @@ var blockPage1 = $('.block-page-1');
 var blockPage2 = $('.block-page-2');
 var blockPage3 = $('.block-page-3');
 var blockHowWork = $('.block-how-work');
+var blockResults = $('.block-results');
 var footerFirstBlock = $('.footer-first-block');
 var footerContainerSecond = $('.footer-container-second');
 var footerContainerThird = $('.footer-container-third');
@@ -72,6 +73,7 @@ function setheight(height) {
   $(blockPage2).height(height);
   $(blockPage3).height(height);
   $(blockHowWork).height(height);
+  $(blockResults).height(height);
   $(footerFirstBlock).height(height);
   $(footerContainerSecond).height(height);
   $(footerContainerThird).height(height);
