@@ -612,6 +612,11 @@ header {
   }
 }
 
+@media (max-width: 760px) {
+  .title-container {
+    font-size: 5.5px;
+  }
+}
 @media (max-width: 720px) {
   .title-container {
     font-size: 5px;
