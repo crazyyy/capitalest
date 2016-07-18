@@ -25,7 +25,7 @@
   .container {
     background-color: #fff;
     .text-slogan {
-      padding-top: 180px;
+      padding-top: 50px;
       padding-right: 0;
       padding-left: 0;
       h4 {
@@ -45,24 +45,24 @@
         color: #535657;
       }
       .text-slogan__top {
-        font-size: 26px;
+        font-size: 30px;
 
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -6px;
+        right: -30px;
 
         padding-top: 5px;
 
         text-align: right;
 
         color: #3d9dd5;
-        text-shadow: 1px 1px 1px #3d9dd5;
+        //text-shadow: 1px 1px 1px #3d9dd5;
         .text-slogan__bottom {
-          font-size: 21px;
+          font-size: 24.5px;
 
           display: block;
 
-          padding-top: 10px;
+          padding-top: 16px;
         }
       }
       .underslogan-text {
@@ -343,35 +343,56 @@
     h4 {
       font-size: 23px;
     }
-    p {
-      width: 55%;
-    }
   }
-  .container {
-    .row {
+  .work-list {
+    display: block;
+
+    width: 100%;
+    margin: 0 auto 80px;
+
+    @extend .clearfix;
+    li {
+      display: inline-block;
+      float: left;
+
+      width: 14.2%;
+      min-width: 145px;
+      height: 270px;
+
+      text-align: center;
+      img {
+        height: auto;
+      }
       span {
-        font-size: 10px;
+        font-size: 15px;
+        font-weight: 500;
+
+        position: absolute;
+        left: -23px;
 
         display: block;
 
-        width: 100%;
+        width: 95%;
         height: 30px;
 
-        color: #000;
+        color: $textBlack;
       }
-    }
-  }
-  .flex-containe-work {
-    .work-proposition {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;;
-      div {
-        width: 14%;
-        padding-right: 10px;
+      &:first-child {
         span {
-          font-size: 13px;
+         // position: relative;
+        }
+      }
+      &:last-child {
+        width: 14.2%;
+
+        text-align: left;
+        img {
+          width: 80px;
+        }
+        span {
+          width: 120%;
+
+          text-align: center;
         }
       }
     }
@@ -436,7 +457,7 @@
       right: 5%;
 
       width: 300px;
-      height: 300px;
+      height: 285px;
 
       text-align: center;
 
@@ -498,7 +519,7 @@
       right: 37%;
 
       width: 260px;
-      height: 280px;
+      height: 220px;
 
       text-align: center;
 
@@ -509,7 +530,7 @@
         font-size: 25px;
 
         margin: 0;
-        padding-top: 50px;
+        padding-top: 20px;
 
         color: #5b5b5b;
       }
@@ -530,7 +551,7 @@
     .block-30 {
       position: absolute;
       top: 195%;
-      right: 12%;
+      right: 10%;
 
       width: 360px;
       height: 285px;
@@ -564,13 +585,13 @@
     }
     .block-percent {
       position: absolute;
-      top: 235%;
+      top: 266%;
       left: -3%;
 
       display: flex;
 
       width: 550px;
-      height: 210px;
+      height: 160px;
 
       text-align: center;
 
@@ -672,19 +693,7 @@
   .footer-first-block .container .text-slogan h4 {
     font-size: 60px;
   }
-  .block-how-work {
-    text-align: center;
-    .flex-containe-work {
-      .work-proposition {
-        justify-content: center;
-        div {
-          span {
-            font-size: 11px;
-          }
-        }
-      }
-    }
-  }
+
   .last-block {
     .footer-text {
       p {
@@ -694,7 +703,6 @@
   }
   .block-results {
     .results {
-
       .our-experience {
         width: 90%;
         margin-bottom: 0;
@@ -821,16 +829,6 @@
         }
       }
     }
-    .flex-containe-work {
-      .work-proposition {
-        justify-content: center;
-        div {
-          span {
-            font-size: 11px;
-          }
-        }
-      }
-    }
   }
 
 
@@ -934,18 +932,6 @@
   }
 }
 @media (max-width:520px) {
-  .block-how-work {
-    .flex-containe-work {
-      .work-proposition {
-        justify-content: center;
-        div {
-          span {
-            font-size: 11px;
-          }
-        }
-      }
-    }
-  }
   .block-results {
     .results {
       .green-block,
@@ -1090,22 +1076,7 @@
 
     text-align: center;
   }
-  .block-how-work {
-    .flex-containe-work {
-      .work-proposition {
-        justify-content: center;
-        div {
-          span {
-            font-size: 11px;
 
-            overflow: hidden;
-
-            text-overflow: ellipsis;
-          }
-        }
-      }
-    }
-  }
 
   .block-results {
     .results {
@@ -1128,19 +1099,6 @@
   }
 }
 @media (max-width:460px) {
-  .block-how-work {
-    text-align: center;
-    .flex-containe-work {
-      .work-proposition {
-        justify-content: center;
-        div {
-          span {
-            font-size: 11px;
-          }
-        }
-      }
-    }
-  }
   .block-results {
     .results {
       .green-block,
