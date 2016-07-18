@@ -21,8 +21,7 @@
   <!-- wrapper -->
   <div class="wrapper">
 
-
-    <header role="banner">
+    <header role="banner" data-slide="1" class="current-slide">
       <div class="container">
 
 
@@ -105,7 +104,7 @@
     <section role="main">
 
       <!-- ABOUT -->
-      <div class="block-about">
+      <div class="block-about" data-slide="2">
         <div class="container">
           <div class="row">
             <div class="col-md-6">
@@ -135,10 +134,8 @@
         </div><!-- /.container -->
       </div><!-- /.block-about -->
 
-
-
       <!-- PAGE 1 -->
-      <div class="block-page-1">
+      <div class="block-page-1" data-slide="3">
         <div class="container">
 
           <div class="row title-page-1">
@@ -151,12 +148,8 @@
             </div>
           </div><!-- /.row title-page-1 -->
 
-
           <div class="row">
-
             <div class="col-md-12 page1-icon1">
-
-
 
               <div class="row">
                 <div class="col-md-12">
@@ -183,8 +176,6 @@
 
 
             </div><!-- /.col-md-12 -->
-
-
 
             <div class="col-md-12 page1-icon2">
               <div class="row">
@@ -222,13 +213,7 @@
       </div>
       <!-- /.block-page-1 -->
 
-
-
-
-<!-- PAGE2 -->
-
-
-      <div class="block-page-2">
+      <div class="block-page-2" data-slide="4">
         <div class="container">
           <div class="row title-page-2">
             <div class="col-md-3">
@@ -267,13 +252,7 @@
         </div><!-- /.container -->
       </div><!-- /.block-page-2 -->
 
-
-
-
-<!-- PAGE3 -->
-
-
-      <div class="block-page-3">
+      <div class="block-page-3" data-slide="5">
         <div class="container">
           <div class="row title-page-3">
             <div class="col-md-7">
@@ -290,7 +269,6 @@
               </h6>
             </div>
           </div><!-- /.row tittl-page-3 -->
-
 
           <div class="row">
             <div class="col-md-12 page3-icon1">
@@ -350,13 +328,8 @@
         </div><!-- /.container -->
       </div><!-- /.block-page-3 -->
 
-
-
-
-
-
       <!-- HOW-WORK -->
-      <div class="block-how-work">
+      <div class="block-how-work" data-slide="6">
         <div class="container">
 
           <div class="row">
@@ -415,7 +388,6 @@
           </div><!-- /.flex-containe-work -->
         </div><!-- /.row -->
 
-
         <div class="container">
           <div class="row">
             <div class="col-md-12 results">
@@ -456,10 +428,9 @@
           </div>
         </div><!-- /.container -->
 
-
       </div><!-- /.block-how-work -->
 
-      <div class="footer-first-block">
+      <div class="footer-first-block" data-slide="7">
         <div class="container">
           <div class="row">
 
@@ -492,7 +463,7 @@
         </div><!-- container -->
       </div><!-- /.footer-first-block -->
 
-      <div class="footer-container-second">
+      <div class="footer-container-second" data-slide="8">
         <div class="container">
           <div class="row">
               <div class="col-md-6">
@@ -527,26 +498,28 @@
 </div><!-- /wrapper -->
 
 <footer role="contentinfo">
-      <div class="col-md-12 last-block">
-          <div class="row">
-            <div class="col-md-4 col-xs-4 footer footer-image">
-              <img src="img/capitalest.png" alt="">
-            </div>
-            <div class="col-md-8 col-xs-8 footer footer-text">
-              <h3>Защита данных и конфиденциальность</h3>
-              <p>Мы не используем в личных целях и не передаём ваши данные третьим лицам. Вы дополнительно имеете право отозвать своё согласие на использование Ваших персональных данных в любое время по электронной почте либо в личном письменном обращении.
-              Информация, указанная на сайте не является публичной офертой</p>
-              <p><span>Все права защищены © 2016 | Компания "КапиталИст" "</span></p>
-            </div>
-          </div>
-        </div>
+  <div class="col-md-12 last-block">
+    <div class="row">
+      <div class="col-md-4 col-xs-4 footer footer-image">
+        <img src="img/capitalest.png" alt="">
+      </div>
+      <div class="col-md-8 col-xs-8 footer footer-text">
+        <h3>Защита данных и конфиденциальность</h3>
+        <p>Мы не используем в личных целях и не передаём ваши данные третьим лицам. Вы дополнительно имеете право отозвать своё согласие на использование Ваших персональных данных в любое время по электронной почте либо в личном письменном обращении.
+        Информация, указанная на сайте не является публичной офертой</p>
+        <p><span>Все права защищены © 2016 | Компания "КапиталИст" "</span></p>
+      </div>
+    </div>
+  </div>
 </footer><!-- /footer -->
 
   <script type="text/javascript" src="js/vendor.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
   <script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(55.755826,37.6173),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(55.755826,37.6173)});infowindow = new google.maps.InfoWindow({content:'<strong>google-map</strong><br>Moscow, Russia<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+<script type="text/javascript">
 
+</script>
 </body>
 </html>
 
