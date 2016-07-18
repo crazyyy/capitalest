@@ -39,21 +39,21 @@ function setWindowSize() {
   if (typeof(window.innerWidth) == 'number') {
     window.myWidth = window.innerWidth;
     window.myHeight = window.innerHeight;
-    if ( window.myHeight < 650 ) {
+    if ( window.myHeight > 650 && window.myWidth > 992) {
       setheight(myHeight);
     }
   } else {
     if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
       window.myWidth = document.documentElement.clientWidth;
       window.myHeight = document.documentElement.clientHeight;
-      if ( window.myHeight < 650 ) {
+      if ( window.myHeight > 650 && window.myWidth > 992) {
         setheight(myHeight);
       }
     } else {
       if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
         window.myWidth = document.body.clientWidth;
         window.myHeight = document.body.clientHeight;
-        if ( window.myHeight < 650 ) {
+        if ( window.myHeight > 650 && window.myWidth > 992) {
           setheight(myHeight);
         }
       }

@@ -32,8 +32,8 @@ $textBlack: #3c3f41;
 .title-page-3 {
   font-size: 10px;
 
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .subtitle {
@@ -46,8 +46,8 @@ $textBlack: #3c3f41;
 .end-page-text {
   font-size: 14px;
 
-  padding-top: 20px;
-  padding-bottom: 50px;
+  margin-bottom: 10px;
+  padding-top: 40px;
 }
 
 .title-no-pading {
@@ -62,9 +62,10 @@ header {
 
   padding-bottom: 5px;
 
-  background-image: url('../img/header.png');
+  background-image: url('../img/header1100.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center top;
+  //background-size: cover;
   // header border bottom
   &:after {
     position: absolute;
@@ -83,8 +84,8 @@ header {
   }
   .container {
     .head-logo-tel {
+      margin-bottom: 50px;
       padding-top: 50px;
-      padding-bottom: 50px;
       .logo {
         width: 150px;
         margin-left: 20px;
@@ -200,8 +201,7 @@ header {
 // ABOUT
 .block-about {
   .container {
-    padding-top: 70px;
-
+    //padding-top: 70px;
     background-color: #fff;
     .row {
       h3 {
@@ -228,7 +228,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   .container {
-    padding-top: 50px;
     .title-page-1 {
       h3 {
         font-size: 5.3em;
@@ -264,9 +263,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   .container {
-    padding-top: 50px;
     .title-page-2 {
-      //vertical-align: center;
       h3 {
         font-size: 3.7em;
         font-weight: 800;
@@ -302,7 +299,7 @@ header {
     }
     .p2-list {
       width: 45%;
-      margin: 10px;
+      margin: 0 10px 10px 10px;
       padding-top: 15px;
     }
   }
@@ -518,7 +515,7 @@ header {
 
 // MEDIA
 
-@media (max-width: 1180px) {
+@media (max-width: 1200px) {
   .title-container {
     font-size: 8px;
   }
@@ -545,9 +542,41 @@ header {
   .title-container {
     font-size: 6px;
   }
+  .block-page-1 .container .title-page-1 {
+    h3,
+    h4,
+    h5 {
+      text-align: left;
+    }
+  }
+  .block-page-2 .container .title-page-2 {
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: left;
+    }
+  }
+  .block-page-3 .container .title-page-3 {
+    h3,
+    h4,
+    h5 {
+      text-align: left;
+    }
+  }
+  .page2-icon {
+    padding: 0;
+    &:before {
+      left: 15px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
   .subtitle
   .title-container {
     font-size: 6px;
@@ -601,5 +630,67 @@ header {
   }
   header .container .title-container {
     width: 100%;
+  }
+}
+
+
+
+
+@media (min-height: 750px) {
+  header {
+    .container {
+      .head-logo-tel {
+        margin-bottom: 100px;
+      }
+      .title-container {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+
+@media (min-height: 800px) {
+  header {
+    .container {
+      .head-logo-tel {
+        margin-bottom: 150px;
+      }
+      .title-container {
+        margin-bottom: 150px;
+      }
+    }
+  }
+}
+
+@media (min-height: 1000px) {
+  header {
+    .container {
+      .head-logo-tel {
+        margin-bottom: 180px;
+      }
+      .title-container {
+        margin-bottom: 180px;
+      }
+    }
+  }
+}
+
+@media (max-height: 800px) {
+  .title-page-1,
+  .title-page-2,
+  .title-page-3 {
+    padding-top: 5px;
+    padding-bottom: 0;
+  }
+  .end-page-text {
+    padding-top: 0;
+  }
+  .block-page-2 .container .p2-list {
+    width: 60%;
+    margin: 0 10px 10px 10px;
+    padding-top: 15px;
+  }
+  .list-dekor {
+    padding-bottom: 5px;
   }
 }
