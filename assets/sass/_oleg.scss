@@ -65,8 +65,8 @@ header {
   background-image: url('../img/header1100.jpg');
   background-repeat: no-repeat;
   background-position: center top;
-  //background-size: cover;
-  // header border bottom
+  background-size: cover;
+  header border bottom
   &:after {
     position: absolute;
     right: 0;
