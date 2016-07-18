@@ -39,17 +39,23 @@ function setWindowSize() {
   if (typeof(window.innerWidth) == 'number') {
     window.myWidth = window.innerWidth;
     window.myHeight = window.innerHeight;
-    setheight(myHeight);
+    if ( window.myHeight < 650 ) {
+      setheight(myHeight);
+    }
   } else {
     if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
       window.myWidth = document.documentElement.clientWidth;
       window.myHeight = document.documentElement.clientHeight;
-      setheight(myHeight);
+      if ( window.myHeight < 650 ) {
+        setheight(myHeight);
+      }
     } else {
       if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
         window.myWidth = document.body.clientWidth;
         window.myHeight = document.body.clientHeight;
-        setheight(myHeight);
+        if ( window.myHeight < 650 ) {
+          setheight(myHeight);
+        }
       }
     }
   }
@@ -87,7 +93,7 @@ $(window).bind('mousewheel', function(event) {
     console.log('up')
   } else {
     console.log('down');
-    scrollDown();
+    // scrollDown();
   }
 });
 
