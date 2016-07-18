@@ -84,18 +84,20 @@ $(document).keydown(function(e) {
   // if DOWN pressed
   if (e.keyCode == '40' || e.keyCode == '32') {
     console.log('down')
-      // if UP pressed
+    scrollDown();
   } else if (e.keyCode == '38') {
     console.log('up')
+    scrollUp();
   }
 });
 
 $(window).bind('mousewheel', function(event) {
   if (event.originalEvent.wheelDelta >= 0) {
     console.log('up')
+    scrollUp();
   } else {
     console.log('down');
-    // scrollDown();
+    scrollDown();
   }
 });
 
@@ -105,22 +107,34 @@ $(document).ready(function() {
 });
 
 function scrollDown() {
-  var currentID = $('.current-slide').attr('current-slide');
+  var currentID = $('.current-slide').attr('data-slide');
   if ( currentID == 9 ) {
     console.log('last slide')
   } else {
+    var nextID = parseInt(currentID) + 1;
+    scroll(nextID);
+  }
 
-    $('.current-slide').removeClass('current-slide');
-    var nextID = currentID + 1;
-    var $nextElement = $( "[data-slide=' +" + nextID + "']" );
-    $nextElement.addClass('current-slide')
-
-    var nextElementTop = $nextElement.position().top;
-    $(window).scrollTop(nextElementTop);
-
-
-    }
+}
+function scrollUp() {
+  var currentID = $('.current-slide').attr('data-slide');
+  if ( currentID == 1 ) {
+    console.log('first slide')
+  } else {
+    var nextID = parseInt(currentID) - 1;
+    scroll(nextID);
+  }
 
 }
 
+function scroll(nextID){
+  var dataslide = "[data-slide=" + nextID + "]";
+  var $nextElement = $(dataslide);
+  console.log(dataslide);
+  $('.current-slide').removeClass('current-slide');
+  $nextElement.addClass('current-slide');
+  $('html, body').animate({
+      scrollTop: $(dataslide).offset().top
+  }, 300);
+}
 
