@@ -9,6 +9,8 @@
 
 .footer-first-block {
   position: relative;
+
+  min-height: 650px;
   &:before {
     position: absolute;
     top: 8%;
@@ -60,26 +62,27 @@
       color: #767676;
       text-shadow: none;
     }
-    .row-our-clients {
-      //padding: 35px 120px;
-      padding-top: 20;
+  }
+}
+.row-our-clients {
+  //padding: 35px 120px;
+  padding-top: 20;
 
-      text-align: center;
-      div {
-        position: relative;
+  text-align: center;
+  div {
+    position: relative;
 
-        display: inline-block;
+    display: inline-block;
 
-        height: 100px;
-        padding-right: 35px;
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
+    height: 100px;
+    //padding-top: 10%;
+    //padding-right: 35px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
 
-          transform: translate(-50%, -50%);
-        }
-      }
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -362,6 +365,8 @@
           span {
             position: relative;
             left: 0;
+
+            width: 85%;
           }
         }
         &:last-child {
