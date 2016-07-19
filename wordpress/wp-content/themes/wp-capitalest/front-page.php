@@ -18,7 +18,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body><!-- wrapper -->
+<body <?php body_class(); ?>><!-- wrapper -->
   <div class="wrapper">
 
     <header role="banner" data-slide="1" class="current-slide">
@@ -29,17 +29,19 @@
 
           <div class="col-md-4 col-sm-6">
             <a class="logo" href="#" title="">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="" title="">
+              <?php $image = get_field('site_logo'); if( !empty($image) ): ?>
+                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+              <?php endif; ?>
             </a>
           </div>
 
           <div class="col-md-4 col-md-offset-4 tel-content col-sm-6">
 
                 <div class="row">
-                  <a class="tel" href="tel:+7000000">+7000 000 00 00</a>
+                  <a class="tel" href="tel:+7000000"><?php the_field('phone'); ?></a>
                 </div>
                 <div class="row">
-                  <a class="mail" href="mailto:capitalest@info.ru">capitalest@info.ru</a>
+                  <a class="mail" href="mailto:capitalest@info.ru"><?php the_field('email'); ?></a>
                   <button class="btn-green btn-recall">ЗАКАЗАТЬ ЗВОНОК</button>
                 </div>
 
@@ -50,8 +52,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="title-container">
-              <h3>Представление и продвижение Ваших интересов</h3>
-              <h4>в Департаменте культурного наследия г. Москвы и области</h4>
+              <h3><?php the_field('first_block_title'); ?></h3>
+              <h4><?php the_field('second_slogan_block_1'); ?></h4>
             </div><!-- title-container -->
           </div>
         </div><!-- row -->
@@ -59,41 +61,14 @@
         <div class="row">
           <div class="col-md-12">
             <ul class="headnav">
+              <?php if( have_rows('another_blocks') ): while ( have_rows('another_blocks') ) : the_row(); ?>
               <li>
                 <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/header-nav-button-1.png" alt="" title="">
-                  <span>Историко культурная экспертиза и исследования</span>
+                  <img src="<?php the_sub_field('block_image'); ?>" />
+                  <span><?php the_sub_field('block_name'); ?></span>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/header-nav-button-2.png" alt="" title="">
-                  <span>Определение предмета охраны</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/header-nav-button-3.png" alt="" title="">
-                  <span>Согласование проектной документации и границ территорий</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/header-nav-button-4.png" alt="" title="">
-                  <span>Как мы работаем</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/header-nav-button-5.png" alt="" title="">
-                  <span>Наши клиенты</span>
-                </a>
-              </li>
-              <li>
-                <a href="#"> <img src="<?php echo get_template_directory_uri(); ?>/img/header-nav-button-6.png" alt="" title="">
-                  <span>Контакты</span>
-                </a>
-              </li>
+             <?php endwhile; endif; ?>
             </ul>
           </div>
         </div><!-- row -->
@@ -108,27 +83,20 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h3>О КОМПАНИИ</h3>
-              <h4>Компания «КапиталИст» - консалтинговая группа, предоставляющая полный комплекс услуг в сфере проектирования, строительства, реконструкции и эксплуатации объектов недвижимости.</h4>
-              <p><span class="blueText">Цель нашей работы</span> – юридическое содействие в повышении эффективности деятельности инвестиционных и бизнес групп для достижения максимальных результатов в указанных сферах. Системный подход, применяемый нами при решении поставленных клиентом задач, предполагает комплексное видение и идентификацию проблемы, минимизацию сроков, <span class="greenText">гарантируя быстрый и качественный результат.</span>
-              </p>
+              <?php the_field('first_text'); ?>
             </div>
             <div class="col-md-6">
-              <h3>НАШ ОПЫТ</h3>
-              <h4>Компания Капиталист представляет интересы доверителей в Департаменте культурного наследия с 2009 года.</h4>
-              <p>Наши специалисты имеют все необходимые виды допусков, лицензий и аккредитаций для проведения историко-культурных экспертиз, исследований и заключений. Мы обладаем уникальным опытом в сфере реновации, реконструкции и сохранения объектов культурного наследия, который является нашим неоспоримым конкурентным преимуществом.</p>
+              <?php the_field('second_text'); ?>
             </div>
           </div><!-- /.row -->
 
           <div class="row">
 
             <div class="col-md-6">
-              <h3>ГАРАНТИИ</h3>
-              <p>высокого качества нашей работы подтверждаются количеством проектов успешно реализованных нами, результаты которых не были оспорены в рамках надзора уполномоченными органами, начиная с 2009 года и по настоящее время.</p>
+              <?php the_field('third_text_second_block'); ?>
             </div>
             <div class="col-md-6">
-              <h3>РЕЗУЛЬТАТЫ</h3>
-              <p>Наш опыт подсказывает, что удовлетворённость клиентов является лучшим критерием успешности нашей Компании. Мы гордимся результатами, которых достигли на сегодняшний день:</p>
+              <?php the_field('fourth_text_second_block'); ?>
             </div>
           </div><!-- row -->
         </div><!-- /.container -->
@@ -140,11 +108,10 @@
 
           <div class="row title-page-1">
             <div class="col-md-7 title-no-pading">
-              <h3>ИСТОРИКО-КУЛЬТУРНЫЕ</h3>
-              <h4>ЭКСПЕРТИЗЫ И ИССЛЕДОВАНИЯ</h4>
+              <?php the_field('3rd_block_title'); ?>
             </div>
             <div class="col-md-5 title-no-pading">
-              <h6 class="blueText">МЫ ГАРАНТИРУЕМ ДОСТИЖЕНИЕ ПОЛОЖИТЕЛЬНОГО РЕЗУЛЬТАТА В МИНИМАЛЬНЫЙ СРОК</h6>
+              <h6 class="blueText"><?php the_field('blue_title'); ?></h6>
             </div>
           </div><!-- /.row title-page-1 -->
 
@@ -154,22 +121,21 @@
               <div class="row">
                 <div class="col-md-12">
                   <h6 class="blueText subtitle">
-                    Проведение государственной историко-культурной экспертизы:
+                    <?php the_field('first__expertise'); ?>
                   </h6>
                 </div>
                 <div class="col-md-6">
                   <ul class="list-dekor">
-                    <li>предварительные работы;</li>
-                    <li>историко-культурные, библиографические изыскания;</li>
-                    <li>натурные исследования с составлением схемы фотофиксации;</li>
-                    <li>научно-аналитические работы;</li>
-                    <li>оценка, рекомендации и предложения по результатам историко-культурных исследований.</li>
+                      <?php if( have_rows('expertision_work') ): while ( have_rows('expertision_work') ) : the_row(); ?>
+                    <li><?php the_sub_field('expertision_step'); ?></li>
+                      <?php endwhile; endif; ?>
                   </ul>
                 </div>
                 <div class="col-md-6">
                   <ul class="list-dekor">
-                    <li>исключение объектов культурного наследия из единого государственного реестра памятников истории и культуры;</li>
-                    <li>включение объектов культурного наследия в единый государственный реестр памятников истории и культуры и определения категории его историко-культурного значения.</li>
+                      <?php if( have_rows('expertision_second_block') ): while ( have_rows('expertision_second_block') ) : the_row(); ?>
+                    <li><?php the_sub_field('second_expertision_step'); ?></li>
+                      <?php endwhile; endif; ?>
                   </ul>
                 </div>
               </div><!-- /.row -->
@@ -182,15 +148,14 @@
                 <div class="col-md-12">
 
                   <h6 class="blueText subtitle">
-                        Проведение историко-культурных исследований:
+                        <?php the_field('history_research'); ?>
                       </h6>
                 </div>
                 <div class="col-md-12">
                   <ul class="list-dekor">
-                    <li>историко-архивные исследования;</li>
-                    <li>историко-архитектурные исследования;</li>
-                    <li>историко-градостроительные исследования;</li>
-                    <li>мемориальные исследования;</li>
+                    <?php if( have_rows('research_steps') ): while ( have_rows('research_steps') ) : the_row(); ?>
+                    <li><?php the_sub_field('step'); ?></li>
+                    <?php endwhile; endif; ?>
                   </ul>
                 </div>
 
@@ -203,7 +168,7 @@
             <!-- /.col-md-12 -->
             <div class="col-md-12">
               <p class="end-page-text">
-                В штате Компании в постоянном взаимодействии с юридическим департаментом работают только эксперты, прошедшие обязательную государственную аттестацию, именно поэтому все виды услуг, которые мы предлагаем нашим клиентам выполняются в строгом соответствии с поставленными задачами и в минимальный срок.
+                <?php the_field('3rd_block_warning'); ?>
               </p>
             </div>
           </div>
@@ -217,15 +182,14 @@
         <div class="container">
           <div class="row title-page-2">
             <div class="col-md-3 title-no-pading">
-              <h3>ОПРЕДЕЛЕНИЕ</h3>
-              <h4>ПРЕДМЕТА</h4>
+              <?php the_field('first_slogan_4th_block'); ?>
             </div>
             <div class="col-md-5 title-no-pading">
-              <h5>ОХРАНЫ</h5>
+              <h5><?php the_field('second_slogan'); ?></h5>
             </div>
             <div class="col-md-4 title-no-pading">
               <h6 class="blueText">
-                МЫ ГАРАНТИРУЕМ ДОСТИЖЕНИЕ ПОЛОЖИТЕЛЬНОГО РЕЗУЛЬТАТА В МИНИМАЛЬНЫЙ СРОК
+                <?php the_field('third_slogan'); ?>
               </h6>
             </div>
           </div><!-- /.row title-page-2 -->
@@ -234,19 +198,14 @@
           <div class="row page2-icon">
             <div class="co-md-10 col-md-offset-2 ">
               <ul class="list-dekor p2-list">
-                <li>натурные исследования, в том числе: обследование квартала, обследование домовладения, обследование строения;</li>
-                <li>историко-архивные и библиографические изыскания по домовладению;</li>
-                <li>разработка схем строительной периодизации строения;</li>
-                <li>разработка схем формирования пространственной структуры территории на исторические этапы;</li>
-                <li>разработка схемы фотофиксации объекта;</li>
-                <li>составление справки по историко-градостростроительному и архитектурному развитию домовладения и пояснительной записки;</li>
-                <li>разработка опорного плана и режимов регулирования градостроительной деятельности;</li>
-                <li>формирование альбома.</li>
+                <?php if( have_rows('block_steps') ): while ( have_rows('block_steps') ) : the_row(); ?>
+                <li><?php the_sub_field('guardian_step'); ?></li>
+                <?php endwhile; endif; ?>
               </ul>
               <button class="btn btn-green">ЗАКАЗАТЬ УСЛУГУ</button>
             </div>
             <div class="col-md-12">
-              <p class="end-page-text">Все виды предоставляемых нами услуг регламентированы договором и выполняются в строгом соответствии с указанными в нем обязательствами.</p>
+              <p class="end-page-text"><?php the_field('warning'); ?></p>
             </div>
           </div><!-- /.row -->
         </div><!-- /.container -->
