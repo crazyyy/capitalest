@@ -82,7 +82,7 @@ $(document).keydown(function(e) {
   // if DOWN pressed
   if (e.keyCode == '40' || e.keyCode == '32') {
     console.log('down')
-    scrollDown();
+    setTimeout(scrollDown(), 3000);
   } else if (e.keyCode == '38') {
     console.log('up')
     scrollUp();
@@ -95,7 +95,7 @@ $(window).bind('mousewheel', function(event) {
     scrollUp();
   } else {
     console.log('down');
-    scrollDown();
+    setTimeout(scrollDown(), 3000);
   }
 });
 
@@ -106,7 +106,7 @@ $(document).ready(function() {
 
 function scrollDown() {
   var currentID = $('.current-slide').attr('data-slide');
-  if ( currentID == 9 ) {
+  if ( currentID == 7 ) {
     console.log('last slide')
   } else {
     var nextID = parseInt(currentID) + 1;
@@ -122,7 +122,6 @@ function scrollUp() {
     var nextID = parseInt(currentID) - 1;
     scroll(nextID);
   }
-
 }
 
 function scroll(nextID){
@@ -131,8 +130,8 @@ function scroll(nextID){
   console.log(dataslide);
   $('.current-slide').removeClass('current-slide');
   $nextElement.addClass('current-slide');
+  var elementTop = $('.current-slide').offset().top;
   $('html, body').animate({
-      scrollTop: $(dataslide).offset().top
-  }, 300);
+      scrollTop: elementTop}, 5000, 'swing');
 }
 
