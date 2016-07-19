@@ -32,8 +32,8 @@ var blockPage2 = $('.block-page-2');
 var blockPage3 = $('.block-page-3');
 var blockHowWork = $('.block-how-work');
 var footerFirstBlock = $('.footer-first-block');
-var footerContainerSecond = $('.footer-container-second');
-var footerContainerThird = $('.footer-container-third');
+//var footerContainerSecond = $('.footer-container-second');
+//var footerContainerThird = $('.footer-container-third');
 
 function setWindowSize() {
   if (typeof(window.innerWidth) == 'number') {
@@ -73,8 +73,8 @@ function setheight(height) {
   $(blockPage3).height(height);
   $(blockHowWork).height(height);
   $(footerFirstBlock).height(height);
-  $(footerContainerSecond).height(height);
-  $(footerContainerThird).height(height);
+  //$(footerContainerSecond).height(height);
+  //$(footerContainerThird).height(height);
 }
 
 /** page scroll */
