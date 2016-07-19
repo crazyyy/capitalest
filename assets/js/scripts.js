@@ -25,35 +25,25 @@ if (typeof jQuery == 'undefined') {
 // when window size changed - resize first block
 window.addEventListener('resize', setWindowSize);
 
-var headerEl = $('header');
-var blockAbout = $('.block-about');
-var blockPage1 = $('.block-page-1');
-var blockPage2 = $('.block-page-2');
-var blockPage3 = $('.block-page-3');
-var blockHowWork = $('.block-how-work');
-var footerFirstBlock = $('.footer-first-block');
-//var footerContainerSecond = $('.footer-container-second');
-//var footerContainerThird = $('.footer-container-third');
-
 function setWindowSize() {
   if (typeof(window.innerWidth) == 'number') {
     window.myWidth = window.innerWidth;
     window.myHeight = window.innerHeight;
-    if ( window.myHeight > 650 && window.myWidth > 992) {
+    if (window.myHeight > 650 && window.myWidth > 992) {
       setheight(myHeight);
     }
   } else {
     if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
       window.myWidth = document.documentElement.clientWidth;
       window.myHeight = document.documentElement.clientHeight;
-      if ( window.myHeight > 650 && window.myWidth > 992) {
+      if (window.myHeight > 650 && window.myWidth > 992) {
         setheight(myHeight);
       }
     } else {
       if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
         window.myWidth = document.body.clientWidth;
         window.myHeight = document.body.clientHeight;
-        if ( window.myHeight > 650 && window.myWidth > 992) {
+        if (window.myHeight > 650 && window.myWidth > 992) {
           setheight(myHeight);
         }
       }
@@ -66,59 +56,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function setheight(height) {
-  $(headerEl).height(height);
-  $(blockAbout).height(height);
-  $(blockPage1).height(height);
-  $(blockPage2).height(height);
-  $(blockPage3).height(height);
-  $(blockHowWork).height(height);
-  $(footerFirstBlock).height(height);
-  //$(footerContainerSecond).height(height);
-  //$(footerContainerThird).height(height);
+  $('.section').each(function(height) {
+    $(this).height(height);
+  });
 }
 
-/** page scroll */
-$(document).keydown(function(e) {
-  // if DOWN pressed
-  if (e.keyCode == '40' || e.keyCode == '32') {
-    console.log('down')
-      // if UP pressed
-  } else if (e.keyCode == '38') {
-    console.log('up')
-  }
-});
+/** google maps */
+function init_map() {
+  var myOptions = {
+    zoom: 10,
+    center: new google.maps.LatLng(55.755826, 37.6173),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+  marker = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(55.755826, 37.6173)
+  });
+  infowindow = new google.maps.InfoWindow({
+    content: '<strong>google-map</strong><br>Moscow, Russia<br>'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map, marker);
+  });
+  infowindow.open(map, marker);
+}
+google.maps.event.addDomListener(window, 'load', init_map);
 
-$(window).bind('mousewheel', function(event) {
-  if (event.originalEvent.wheelDelta >= 0) {
-    console.log('up')
-  } else {
-    console.log('down');
-    // scrollDown();
-  }
-});
-
+/** add scroll anima */
 $(document).ready(function() {
-  $('html,body').animate({scrollTop:0},800);
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
+  $('#fullpage').fullpage({
+    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+    css3: true
+  });
 });
-
-function scrollDown() {
-  var currentID = $('.current-slide').attr('current-slide');
-  if ( currentID == 9 ) {
-    console.log('last slide')
-  } else {
-
-    $('.current-slide').removeClass('current-slide');
-    var nextID = currentID + 1;
-    var $nextElement = $( "[data-slide=' +" + nextID + "']" );
-    $nextElement.addClass('current-slide')
-
-    var nextElementTop = $nextElement.position().top;
-    $(window).scrollTop(nextElementTop);
-
-
-    }
-
-}
-
-
