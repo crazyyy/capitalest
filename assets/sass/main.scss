@@ -9,6 +9,7 @@
 @import 'grid/bootstrap';
 @import 'grid/bootstrap-theme';
 @import 'sprite';
+@import 'jquery.fullPage';
 
 body {
   font-family: $base-font-family;
@@ -108,7 +109,7 @@ nav {
 }
 
 section {
-  padding: 0 0 $footer;
+  // padding: 0 0 $footer;
 }
 article {
   @extend .clearfix;
@@ -120,10 +121,8 @@ article {
 
 footer {
   height: $footer;
-  margin: $footer_margin auto 0;
-  .inner {
-    height: $footer;
-  }
+  // margin: $footer_margin auto 0;
+
 }
 
 
