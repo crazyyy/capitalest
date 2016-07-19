@@ -23,13 +23,13 @@ $textBlack: #3c3f41;
   color: $liteGreen;
 }
 
-
 .title-container {
   font-size: 10px;
 }
 .title-page-1,
 .title-page-2,
-.title-page-3 {
+.title-page-3,
+.title-first-footer-block {
   font-size: 10px;
 
   padding-top: 30px;
@@ -48,12 +48,16 @@ $textBlack: #3c3f41;
 
   margin-bottom: 10px;
   padding-top: 40px;
+
+  text-align: center;
 }
 
 .title-no-pading {
   padding-right: 0;
   padding-left: 0;
 }
+
+
 
 
 // HEADER
@@ -240,7 +244,7 @@ header {
         text-align: right;
       }
       h4 {
-        font-size: 4.35em;
+        font-size: 4.3em;
         font-weight: 700;
         line-height: .9;
 
@@ -524,7 +528,8 @@ header {
   }
   .title-page-1,
   .title-page-2,
-  .title-page-3 {
+  .title-page-3,
+  .title-first-footer-block {
     font-size: 8px;
 
     padding-top: 0;
@@ -586,7 +591,8 @@ header {
   }
   .title-page-1,
   .title-page-2,
-  .title-page-3 {
+  .title-page-3,
+  .title-first-footer-block {
     font-size: 7px;
 
     padding-top: 10px;
@@ -671,6 +677,13 @@ header {
 }
 
 @media (min-height: 1000px) {
+  .title-page-1,
+  .title-page-2,
+  .title-page-3,
+  .title-first-footer-block {
+    padding-top: 12%;
+    padding-bottom: 50px;
+  }
   header {
     .container {
       .head-logo-tel {
@@ -679,6 +692,11 @@ header {
       .title-container {
         margin-bottom: 180px;
       }
+    }
+  }
+  .block-about {
+    .container {
+      padding-top: 12%;
     }
   }
 }
