@@ -60,3 +60,33 @@ function setheight(height) {
     $(this).height(height);
   });
 }
+
+/** google maps */
+function init_map() {
+  var myOptions = {
+    zoom: 10,
+    center: new google.maps.LatLng(55.755826, 37.6173),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+  marker = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(55.755826, 37.6173)
+  });
+  infowindow = new google.maps.InfoWindow({
+    content: '<strong>google-map</strong><br>Moscow, Russia<br>'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map, marker);
+  });
+  infowindow.open(map, marker);
+}
+google.maps.event.addDomListener(window, 'load', init_map);
+
+/** add scroll anima */
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+    css3: true
+  });
+});
