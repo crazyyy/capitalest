@@ -44,10 +44,10 @@ $textBlack: #3c3f41;
 }
 
 .end-page-text {
-  font-size: 14px;
+  font-size: 16px;
 
   margin-bottom: 10px;
-  padding-top: 40px;
+  padding-top: 10%;
 
   text-align: center;
 }
@@ -145,7 +145,7 @@ header {
       background-color: rgba(255,255,255, .5);
       box-shadow: 0 2px 35px 0 rgba(0,0,0,.5);
       h3 {
-        font-size: 4.5em;
+        font-size: 4.43em;
 
         margin: 0;
       }
@@ -699,6 +699,10 @@ header {
       padding-top: 12%;
     }
   }
+  .row-how-work {
+    padding-top: 12%;
+    padding-bottom: 12%;
+  }
 }
 
 @media (max-height: 800px) {
@@ -709,6 +713,8 @@ header {
     padding-bottom: 0;
   }
   .end-page-text {
+    font-size: 14px;
+
     padding-top: 0;
   }
   .block-page-2 .container .p2-list {
