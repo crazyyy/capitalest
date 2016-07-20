@@ -215,16 +215,11 @@
         <div class="container">
           <div class="row title-page-3">
             <div class="col-md-7 title-no-pading">
-              <h3>
-                СОГЛАСОВАНИЕ ПРОЕКТНОЙ
-              </h3>
-              <h4>
-                ДОКУМЕНТАЦИИ И ГРАНИЦ ТЕРРИТОРИЙ
-              </h4>
+              <?php the_field('first_title_5th_block'); ?>
             </div>
             <div class="col-md-5 title-no-pading">
               <h6 class="blueText">
-                МЫ ГАРАНТИРУЕМ ДОСТИЖЕНИЕ ПОЛОЖИТЕЛЬНОГО РЕЗУЛЬТАТА В МИНИМАЛЬНЫЙ СРОК
+                <?php the_field('second_slogan_5th_block'); ?>
               </h6>
             </div>
           </div><!-- /.row tittl-page-3 -->
@@ -235,19 +230,19 @@
               <div class="row">
                 <div class="col-md-12">
                   <h6 class="blueText subtitle">
-                    Разработка и согласование проектной документации:
+                    <?php the_field('documentation_title'); ?>
                   </h6>
                 </div>
                 <div class="col-md-6">
                   <ul class="list-dekor">
-                    <li>Разработка проектов реставрации и приспособления для современного использования;</li>
-                    <li>Сопровождение прохождения обязательной государственной историко-культурной экспертизы;</li>
-
+                      <?php if( have_rows('documentation_table') ): while ( have_rows('documentation_table') ) : the_row(); ?>
+                    <li><?php the_sub_field('documentation_steps'); ?></li>
+                      <?php endwhile; endif; ?>
                   </ul>
                 </div>
                 <div class="col-md-6">
                   <ul class="list-dekor">
-                    <li>Согласование с соответствующим государственным органом охраны объектов культурного наследия.</li>
+                    <li><?php the_field('document_table_second'); ?></li>
                   </ul>
                 </div>
               </div><!-- /.row -->
@@ -257,13 +252,14 @@
                 <div class="col-md-12">
 
                   <h6 class="blueText  subtitle">
-                        Разработка проектов границ территорий и зон охраны:
+                        <?php the_field('guard_title'); ?>
                       </h6>
                 </div>
                 <div class="col-md-6">
                   <ul class="list-dekor">
-                    <li>Корректировка границ территорий, зон охраны объектов культурного наследия,</li>
-                    <li>Внесение изменений в режимы использования земельных участков и градостроительных регламентов в отношении объектов культурного наследия.</li>
+                    <?php if( have_rows('guard_table') ): while ( have_rows('guard_table') ) : the_row(); ?>
+                    <li><?php the_sub_field('guard_step'); ?></li>
+                      <?php endwhile; endif; ?>
 
                   </ul>
                 </div>
@@ -278,7 +274,7 @@
 
             <div class="col-md-12">
               <p class="end-page-text">
-                Специалисты Компании обладают необходимыми знаниями и опытом работы в области архитектуры, реставрации и проектирования, а также  имеют все необходимые допуски, сертификаты и аккредитации.
+                <?php the_field('block_5_warning'); ?>
               </p>
             </div>
 
@@ -293,54 +289,18 @@
 
           <div class="row row-how-work">
             <div class="col-md-12 col-xs-12 slogan-work">
-              <h3>КАК МЫ РАБОТАЕМ?</h3>
-              <h4>Мы выстраиваем оптимальные правовые алгоритмы решения поставленной задачи, а именно:</h4>
+              <h3><?php the_field('block_6-th_title'); ?></h3>
+              <h4><?php the_field('block_6-th_subtitle'); ?></h4>
             </div>
 
             <div class="col-md-12">
               <ul class="work-list">
-                <li>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/libro.png" alt="">
-                  <span>
-                    Проведение комплексного юридическое исследования
-                  </span>
-                </li>
-                <li>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/deal.png" alt="">
-                  <span>
-                    Заключение договора, который гарантирует достижение результата в оговоренный срок
-                  </span>
-                </li>
-                 <li>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/search.png" alt="">
-                  <span>
-                    Организация сбора всех необходимых исходных данных, проведение экспертиз и заключений
-                  </span>
-                </li>
-                <li>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/man.png" alt="">
-                  <span>
-                   Представление ваших интересов на всех уровнях согласования
-                  </span>
-                </li>
-                <li>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/pad.png" alt="">
-                  <span>
-                   Внесение изменений в распорядительные акты, регулирующие предметы охраны объектов культурного наследия
-                  </span>
-                </li>
-                <li>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="">
-                  <span>
-                    Принятие решения органом исполнительной власти о согласовании результатов проведённых работ
-                  </span>
-                </li>
-                <li>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/persent.png" alt="">
-                  <span>
-                    Мы гарантируем выполнение всех взятых на себя обязательств. При отсутствии ожидаемого результата возвращаем 100% стоимости наших услуг
-                  </span>
-                </li>
+                <?php if( have_rows('algorithm') ): while ( have_rows('algorithm') ) : the_row(); ?>
+              <li>
+                  <img src="<?php the_sub_field('algorithm_image'); ?>" />
+                  <span><?php the_sub_field('algorithm_text'); ?></span>
+              </li>
+             <?php endwhile; endif; ?>
               </ul>
             </div>
           </div><!-- /.row -->
@@ -351,40 +311,39 @@
 
           <div class="row row-results">
             <div class="col-md-12 col-xs-12 results">
-              <h3>РЕЗУЛЬТАТЫ</h3>
-              <p class="our-experience">Наш опыт подсказывает, что удовлетворённость клиентов является лучшим критерием успешности нашей Компании.</p>
-              <p>Мы гордимся результатами, которых достигли на сегодняшний день:</p>
+              <h3><?php the_field('results_title'); ?></h3>
+              <p class="our-experience"><?php the_field('results_subtitle'); ?></p>
 
               <div class="green-block">
-                <h5>Определены</h5>
-                <p class="number">42</p>
-                <p>предмета охраны обьектов культурного значения</p>
+                <h5><?php the_field('result_1_title'); ?></h5>
+                <p class="number"><?php the_field('result_1_number'); ?></p>
+                <p><?php the_field('result_1_content'); ?></p>
               </div>
               <div class="blue-block">
-                <h5>Разработано</h5>
-                <p class="number">22</p>
-                <p>проекта границ территорий, зон охраны объектов культурного наследия, режимов использования земельных участков и градостроительных регламентов</p>
+                <h5><?php the_field('result_2_title'); ?></h5>
+                <p class="number"><?php the_field('result_2_number'); ?></p>
+                <p><?php the_field('result_2_content'); ?></p>
               </div>
               <div class="block-21">
-                <h5>Проведено</h5>
-                <p class="number">21</p>
-                <p>историко-культурных исследований</p>
+                <h5><?php the_field('result_3_title'); ?></h5>
+                <p class="number"><?php the_field('result_3_number'); ?></p>
+                <p><?php the_field('result_3_content'); ?></p>
               </div>
               <div class="block-67">
-                <h5>Проведено</h5>
-                <p class="number">67</p>
-                <p>государственно историко-культурных экспертиз</p>
+                <h5><?php the_field('result_4_title'); ?></h5>
+                <p class="number"><?php the_field('result_4_number'); ?></p>
+                <p><?php the_field('result_4_content'); ?></p>
               </div>
               <div class="block-30">
-                <p><span>Разработана и согласована проектная документация по реставрации и приспособлению</span></p>
-                <p class="number">30</p>
-                <p class="bold">объектов
-                </p>
-                <p>культурного наследия для современного использования</p>
+                <p><span><?php the_field('result_5_title'); ?></span></p>
+                <p class="number"><?php the_field('result_5_number'); ?></p>
+                <p class="bold"><?php the_field('result_5_content'); ?></p>
               </div>
               <div class="block-percent">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/parcent.png" alt="">
-                <p>ни один результат нашей работы не был оспорен в порядке надзора</p>
+
+                <img src="<?php the_field('result_6_image'); ?>" />
+
+                <p><?php the_field('result_6_content'); ?></p>
               </div>
             </div><!-- results -->
           </div><!-- .row .row-results-->
@@ -397,39 +356,23 @@
             <div class="col-md-7 title-no-pading">
 
               <h4>
-                НАШИ КЛИЕНТЫ
+                <?php the_field('block_7_title'); ?>
               </h4>
             </div>
             <div class="col-md-5 title-no-pading">
-                <h5 class="blueText">МЫ ГОРДИМСЯ НАШИМ</h5>
-                <h6 class="blueText">СОТРУДНИЧЕСТВОМ С ВАМИ!</h6>
+                <?php the_field('subtitle_7-th_block'); ?>
             </div>
           </div><!-- title-first-footer-block -->
 
           <div class="row">
             <div class="col-md-12 col-xs-12 text-slogan">
 
-              <p class="underslogan-text">«Мы знаем, что удовлетворенность наших клиентов всегда приводит к общему успеху, именно по этому мы сегодня реализуем проекты, которые невыполнимы для большинства наших коллег и готовы сделать еще больше, чтобы завтра открыть перед вами новые возможности».</p>
+              <p class="underslogan-text"><?php the_field('block_7_content'); ?></p>
 
               <div class="row row-our-clients">
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-1.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-2.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-3.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-4.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-5.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-3.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-1.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-2.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-3.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-4.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-5.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-3.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-1.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-2.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-3.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-4.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-5.png" alt=""></div>
-                <div class="col-md-2"><img src="<?php echo get_template_directory_uri(); ?>/img/client-3.png" alt=""></div>
+                <?php if( have_rows('clients_table') ): while ( have_rows('clients_table') ) : the_row(); ?>
+                <div class="col-md-2"><img src="<?php the_sub_field('client_image'); ?>" /></div>
+                <?php endwhile; endif; ?>
               </div><!-- row-our-clients -->
             </div><!-- text-slogan -->
           </div>
@@ -440,8 +383,8 @@
         <div class="container">
           <div class="row">
               <div class="col-md-12 colnsot">
-                <h3>БЕСПЛАТАЯ КОНСУЛЬТАЦИЯ</h3>
-                <p>* Получите бесплатную консультацию прямо сейчас</p>
+                <h3><?php the_field('block_8_title'); ?></h3>
+                <p><?php the_field('block_8_subtitle'); ?></p>
                 <form class="mail-form" action="input" method="post">
                   <input class="small-input" type="text" placeholder="Ваше имя">
                   <input class="small-input" type="text" placeholder="Телефон">
@@ -457,10 +400,10 @@
       <div class="footer-container-third">
         <div class="map-container">
           <div class="contacts">
-            <h5>Контакты</h5>
-            <a class="phone" href="tel:+70000000000">+7 000 000 00 00</a>
-            <a class="phone" href="tel:+70000000000">+7 000 000 00 00</a>
-            <p class="web-search"><span>г. Москва, ул. Нзвание улицы,<br> д.000, корп.00</span></p>
+            <h5><?php the_field('contact_form_title'); ?></h5>
+            <a class="phone" href="tel:+70000000000"><?php the_field('contacts_phone'); ?></a>
+            <a class="phone" href="tel:+70000000000"><?php the_field('second_phone'); ?></a>
+            <p class="web-search"><span><?php the_field('contacts_adress'); ?></span></p>
             <button class="feedback">ОБРАТНАЯ СВЯЗЬ</button>
           </div><!-- contacts -->
           <div id='gmap_canvas'></div>
@@ -474,12 +417,11 @@
   <div class="col-md-12 col-xs-12 last-block">
     <div class="row">
       <div class="col-md-4 col-xs-4 footer footer-image">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/capitalest.png" alt="">
+        <img src="<?php the_field('footer_image'); ?>" />
       </div>
       <div class="col-md-8 col-xs-8 footer footer-text">
-        <h3>Защита данных и конфиденциальность</h3>
-        <p>Мы не используем в личных целях и не передаём ваши данные третьим лицам. Вы дополнительно имеете право отозвать своё согласие на использование Ваших персональных данных в любое время по электронной почте либо в личном письменном обращении.
-        Информация, указанная на сайте не является публичной офертой</p>
+        <h3><?php the_field('footer_title'); ?></h3>
+        <p><?php the_field('footer_content'); ?></p>
         <p><span>Все права защищены © 2016 | Компания "КапиталИст" "</span></p>
       </div>
     </div>
