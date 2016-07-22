@@ -165,7 +165,9 @@
 
 
             //events
-            afterLoad: null,
+            afterLoad:function(link, index) {
+
+            },
             onLeave: null,
             afterRender: null,
             afterResize: null,
@@ -1319,7 +1321,7 @@
 
             //is the destination element bigger than the viewport?
             if(element.outerHeight() > windowsHeight){
-                //scrolling up? 
+                //scrolling up?
                 if(!isScrollingDown && !bigSectionsDestination || bigSectionsDestination === 'bottom' ){
                     position = sectionBottom;
                 }
@@ -2835,8 +2837,8 @@
          */
         isScrolled: function(type, scrollable) {
             var scroller = scrollable.data('iscrollInstance');
-            
-            //no scroller? 
+
+            //no scroller?
             if (!scroller) {
                 return true;
             }

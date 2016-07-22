@@ -86,7 +86,9 @@ google.maps.event.addDomListener(window, 'load', init_map);
 /** add scroll anima */
 $(document).ready(function() {
   $('#fullpage').fullpage({
-    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-    css3: true
+    css3: true,
+    anchors:['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7', 'page-8', 'page-9'],
+    navigationTooltips:['Секция 1','Секция 2','Секция 3','Секция 4','Секция 5','Секция 6', 'Секция 7','Секция 8','Секция 9'],
+    navigation:true
   });
 });
